@@ -1,24 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Todo List - Miftahul Jihad</title>
 
-    <!-- CSS External -->
-     <link rel="stylesheet" href="style.css">
+   <!-- Css External -->
+   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header Content -->
-    <header></header>
+   <!-- Form Section -->
+   <section class="box-form">
+      <h1 style="text-align: center;">Todo List</h1>
 
-    <!-- Main Content -->
-     <main></main>
+      <div class="input-group">
+         <!-- Todo Input -->
+         <input type="text" id="todo-input" placeholder="Add a todo">
 
-     <!-- Footer Content -->
-      <footer></footer>
+         <!-- Date Input -->
+         <input type="date" id="todo-date">
 
-      <!-- JavaScript External -->
-       <script src="js/script.js"></script>
+         <!-- Add Button -->
+         <button id="add-btn" onclick="tambahTugas()">+</button>
+      </div>
+
+      <!-- Action -->
+      <div class="action-group">
+         <!-- Filter Options -->
+         <select id="filter-select" onchange="filterTugas()">
+            <option value="semua">All</option>
+            <option value="selesai">Finished</option>
+            <option value="belum">Not finished</option>
+         </select>
+         
+         <!-- Delete All Button -->
+         <button class="delete-all-btn" id="clear-btn" onclick="hapusSemua()">DELETE ALL</button>
+      </div>
+
+      <!-- Todo List Table -->
+      <table style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+         <thead>
+            <tr>
+               <th>TASK</th>
+               <th>DUE DATE</th>
+               <th>STATUS</th>
+               <th>ACTIONS</th>
+            </tr>
+         </thead>
+         <tbody id="tabel-body"></tbody>
+      </table>
+      <p id="pesan-kosong" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center; color: #ffffff; margin-top: 20px;">
+         No task found
+      </p>
+
+      <!-- Footer Content -->
+      <footer class="copyright">
+         <p style="font-size: 12px; color: #94a3b8; margin: 0 ;">
+            © 2026 Todo List App - Miftahul Jihad. All Rights Reserved.</p>
+      </footer>
+   </section>
+
+   <script src="js/script.js"></script>
 </body>
 </html>
